@@ -13,17 +13,20 @@ namespace aspnetapp
     public class Program
     {
         public static void Main(string[] args)
-        {            
+        {      
+            // hey i think we shuold refactor this      
             var host = Host.CreateDefaultBuilder()    
                 .ConfigureWebHostDefaults(webBuilder => { 
                     webBuilder.Configure(app => { 
                         app.UseHttpsRedirection()
                             .Run(async context => {
-                                await context.Response.WriteAsync("Hello remote world from ASP.NET Core!");
+                                await context.Response.WriteAsync("Hello remote world from The Dev Talk Show!");
                             });
                     });
                 });
             host.Build().Run();
+
+            //more intelligent stuff goes here.
         }
     }
 }
